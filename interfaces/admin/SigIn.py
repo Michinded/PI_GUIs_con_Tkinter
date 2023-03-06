@@ -18,7 +18,7 @@ def registrar(name, email, password):
         return
     else:
         hashed_password = hashlib.sha256(password.encode()).hexdigest()
-        sql = "INSERT INTO admins (adminName, email, password, created_at, active_rol ) VALUES (%s, %s, %s, %s, %s)"
+        sql = "INSERT INTO admins (adminName, email, password, registred_at, active_rol ) VALUES (%s, %s, %s, %s, %s)"
         val = (name, email, hashed_password, fecha, rol)
         interfaces.ConectorBD.cursor.execute(sql, val)
         interfaces.ConectorBD.conn.commit()
