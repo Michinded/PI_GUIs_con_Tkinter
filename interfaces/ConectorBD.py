@@ -5,7 +5,7 @@ conn = mysql.connector.connect(
   host="localhost",
   user="root",
   password="",
-  database="progpoo"
+  database="helpme"
 )
 
 # Obtener el cursor de la conexión

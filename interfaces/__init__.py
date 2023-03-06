@@ -3,12 +3,14 @@ import tkinter as tk
 import tkinter.messagebox as MessageBox
 import users.Login
 import users.SigIn
+import admin.AdminsMenu
 
-class HUB(tk.Tk):
+
+class MainMenu(tk.Tk):
   def __init__(self):
     super().__init__()
     self.title("Login/Signup")
-    self.geometry("300x200")
+    self.geometry("250x300")
     seccion1 = Frame(self, bg="blue")
     seccion1.pack(expand=True, fill="both")
 
@@ -24,6 +26,10 @@ class HUB(tk.Tk):
     #Signup Button
     signup_btn = tk.Button(seccion1, text="Signup", command=self.show_signup_form, bg="red", fg="white", font=("Arial", 12))
     signup_btn.pack(pady=10)
+
+    #Iniciar como admin
+    admin_btn = tk.Button(seccion1, text="Iniciar como admin", command=self.show_admin_form, bg="yellow", fg="black", font=("Arial", 12))
+    admin_btn.pack(pady=10)
 
     #Cerrar Button
     close_btn = tk.Button(seccion1, text="Cerrar", command=self.destroy, bg="red", fg="white", font=("Arial", 12))
@@ -43,6 +49,14 @@ class HUB(tk.Tk):
     signup_window.grab_set()
     self.wait_window(signup_window)
 
+  def show_admin_form(self):
+    #Conecta al menu de admin
+    admin_window = admin.AdminsMenu.MenuAdmin()
+    admin_window.transient(self)
+    admin_window.grab_set()
+    self.wait_window(admin_window)
+
+
 if __name__ == "__main__":
-  app = HUB()
+  app = MainMenu()
   app.mainloop()
