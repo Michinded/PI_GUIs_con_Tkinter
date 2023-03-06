@@ -9,7 +9,7 @@ import admin.AdminsMenu
 class MainMenu(tk.Tk):
   def __init__(self):
     super().__init__()
-    self.title("Login/Signup")
+    self.title("MAIN MENU")
     self.geometry("250x300")
     seccion1 = Frame(self, bg="blue")
     seccion1.pack(expand=True, fill="both")

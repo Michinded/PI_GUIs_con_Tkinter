@@ -41,7 +41,7 @@ def validarCampos(username, password):
 class LoginWindow(tk.Toplevel):
     def __init__(self):
         super().__init__()
-        self.title("Login")
+        self.title("Login ADMIN")
         self.geometry("300x200")
         # colores
         cbg = "#306AD1"

@@ -56,7 +56,7 @@ def validarEmail(email):
 class SignupWindow(tk.Toplevel):
     def __init__(self):
         super().__init__()
-        self.title("Signup")
+        self.title("Signup ADMIN")
         self.geometry("300x400")
 
         cbg = "#35D38B"
